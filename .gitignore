@@ -1,8 +1,33 @@
-﻿node_modules/
-.bun
-dist/
-build/
-.next/
+﻿# Dependências e artefatos
+**/node_modules/
+**/.pnp/
+.pnp.*
+**/.bun/
+
+# Builds/artefatos
+**/dist/
+**/build/
+**/out/
+**/.next/
+
+# Testes e relatórios
+**/coverage/
+**/playwright-report/
+**/test-results/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Env
 .env
+.env.*
 .env.local
+
+# Misc
 .DS_Store
+*.tsbuildinfo
+*.pem
+**/.vercel
