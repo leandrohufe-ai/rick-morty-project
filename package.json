@@ -1,0 +1,57 @@
+{
+  "name": "rick-morty-project",
+  "version": "0.1.0",
+  "description": "Rick and Morty com Next.js e Bun",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/web",
+    "apps/api",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run --filter ./apps/web dev",
+    "build": "bun run --filter ./apps/web build",
+    "start": "bun run --filter ./apps/web start",
+    "lint": "bun run --filter ./apps/web lint || true",
+    "format": "bun run --filter ./apps/web format || true",
+    "type-check": "tsc --noEmit -p apps/web/tsconfig.json",
+  "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:report": "playwright show-report",
+    "clean": "rm -rf node_modules .bun dist build .next && find . -type d -name 'node_modules' -exec rm -rf {} + 2>/dev/null || true"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/bun": "latest",
+    "@types/node": "^24.9.2",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "@vitest/ui": "^4.0.5",
+    "eslint": "^9.38.0",
+    "husky": "^9.1.7",
+    "jsdom": "^27.0.1",
+    "lint-staged": "^16.2.6",
+    "prettier": "^3.6.2",
+    "typescript": "^5.x",
+    "vitest": "^4.0.5"
+  },
+  "packageManager": "bun@latest",
+  "dependencies": {
+    "axios": "^1.13.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.548.0",
+    "react-icons": "^5.5.0",
+    "zod": "^4.1.12"
+  }
+}
